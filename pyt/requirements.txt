@@ -1,0 +1,4 @@
+times==0.7
+mysql-connector-python==8.0.11
+paho-mqtt==1.5.0
+urlparse3==1.1

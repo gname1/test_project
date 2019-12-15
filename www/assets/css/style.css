@@ -1,0 +1,27 @@
+h1 {
+	color: blue;
+}
+
+.bulb_image {
+	
+}
+
+#devices_table {
+	border-spacing: 17px 21px;
+}
+
+
+
+
+#page_content {
+	
+
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	
+	
+
+}
