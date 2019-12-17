@@ -1,18 +1,17 @@
 version: "3"
 services:
     www:
-        image: httpd:2.4
+        build: .
         ports:
             - "8001:80"
         volumes:
             - ./www:/var/www/html/
             - ./httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf
+            - ./php/php.ini:/usr/local/etc/php/php.ini
         links:
             - db
         networks:
             - default
-        depends_on:
-            - php
     db:
         image: mysql:5.7.13
         command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
@@ -42,10 +41,5 @@ services:
         build: ./pyt
         links:
           - 'db'
-    php:
-        build:
-          ./php
-        volumes:
-          - ./php/php.ini:/usr/local/etc/php/php.ini
 volumes:
     persistent:
